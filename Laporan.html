@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Clinic</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+</head>
+<main>
+    <body>
+        <table>
+            <tr>
+                <th><img align="right" src="assets/image/logo2.png" width="50" height="50"</th>
+            </tr>
+        </table> 
+        <table>
+            <tr>
+                <td>
+                    <p id="dataClinicname">BENINGS CLINIC TRAINING</p>
+                    <p id="dataShortname">TRAINING</p>
+                    <p id="dataNomortelp">TELP : 021 2230 2705</p>
+                    <p id="dataIdtr">F2311_00011_TRN</p>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    <p id="dataIdpasien" class="style1">1212</p>
+                    <p id="dataNmpasien" class="style1">iqbal</p>
+                    <p id="tanggal" class="style1">TANGGAL</p>
+                    <p id="dataCetakOleh" class="style1">iqbal</p>
+                </td>
+            </tr>
+        </table>     
+            <table>
+                <tr>
+                    <td>
+                        <p class="style1">(A) KONSUL DOKTER & SKIN</p>
+                        <p aria-colspan="2">1 X RP 0</p>
+                        <p class="style1">(A) LUXURY FACIAL SINGLE</p>
+                        <p aria-colspan="2">0 X RP.1.500.000</p>
+                        <p class="style1">(A) CHROMOSOME FACIAL</p>
+                        <p aria-colspan="2">1 X RP.2.500.000</p>
+                    </td>
+                    <td>
+                        <p class="style2">RP 0</p>
+                        <p class="style2">(RETUR)</p>
+                        <p class="style2">RP 0</p>
+                        <p class="style2">RP.2.500.000</p>
+                    </td>
+                </tr>
+            </table>
+
+            <p>PEMBAYARAN</p>
+            <table>
+                <tr>
+                    <td>
+                        <p class="style1">TUNAI</p>
+                        <p class="style1">TUNAI</p>
+                    </td>
+                    <td>
+                        <p class="style2">RP.1.665.000</p>
+                        <p class="style2">RP.1.110.000</p>
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td>
+                        <p class="style1">TOTAL PEMBELIAN</p>
+                        <p class="style1">ONGKOS KIRIM</p>
+                        <p class="style1">PAJAK (PPN 11%)</p>
+                        <p class="style1">TOTAL BAYAR</p>
+                    </td>
+                    <td>
+                        <p class="style2">RP.2.500.000</p>
+                        <p class="style2">RP.0</p>
+                        <p class="style2">RP.275.000</p>
+                        <p class="style2">RP.2.775.000</p>
+                    </td>
+                </tr>
+            </table>
+            
+            <body>
+                <hr size="1" width="370px" color="black">
+            </body>
+
+            <table>
+                <tr>
+                    <td class="style1">KEMBALI</td>
+                    <td class="style2">RP.0</td>
+                </tr>
+            </table>
+            
+            <table>
+                <tr>
+                    <td>
+                        <p id="waktu">WAKTU CETAK</p>
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <td colspan="3">
+                    <p>TERIMA KASIH</p>
+                    <p>ATAS KUNJUNGAN ANDA</p>
+                </td>
+            </table>
+    </body>
+<script>
+        window.onload = function() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var Clinicname = urlParams.get('Clinicname');
+        var Shortname = urlParams.get('Shortname');
+        var Nomortelp = urlParams.get('Nomortelp');
+        var Idtr = urlParams.get('Idtr');
+        var Idpasien =  urlParams.get('Idpasien');
+        var Nmpasien = urlParams.get('Nmpasien');
+        var dicetakOleh = urlParams.get('Option');
+   
+        if (Clinicname) {
+           document.getElementById('dataClinicname').innerText = Clinicname;
+            }
+        if (Shortname) {
+           document.getElementById('dataShortname').innerText = Shortname;
+            }
+        if (Nomortelp) {
+           document.getElementById('dataNomortelp').innerText = "TELP:" + Nomortelp;
+            }
+        if (Idtr) {
+           document.getElementById('dataIdtr').innerText = Idtr;
+            }
+        if (Idpasien) {
+           document.getElementById('dataIdpasien').innerText = "PASIEN:" + Idpasien;
+            }
+        if (Nmpasien) {
+           document.getElementById('dataNmpasien').innerText = Nmpasien;
+            }
+        if (dicetakOleh) {
+           document.getElementById('dataCetakOleh').innerText = "KASIR :" + dicetakOleh;
+            }
+        }
+
+        //Pertanggalan
+        const paragraph = document.getElementById('tanggal');
+        const date = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = date.toLocaleDateString('id-ID', options);
+        paragraph.textContent = ` ${formattedDate}`;
+
+       //Perwaktuan
+       function tampilkanWaktu() {
+        var sekarang = new Date();
+        var jam = sekarang.getHours();
+        var menit = sekarang.getMinutes();
+        var detik = sekarang.getSeconds();
+        detik++;
+        if (detik >= 60) {
+            detik = 0;
+            menit++;
+        }
+        if (menit >= 60) {
+            menit = 0;
+            jam++;
+        }
+        if (jam >= 24) {
+            jam = 0;
+        }
+        jam = padZero(jam);
+        menit = padZero(menit);
+        detik = padZero(detik);
+        document.getElementById('waktu').innerText = jam + ':' + menit + ':' + detik;
+        setTimeout(tampilkanWaktu, 1000);
+        }
+        function padZero(nilai) {
+        return nilai < 10 ? '0' + nilai : nilai;
+        }
+
+        tampilkanWaktu();
+</script>
+</main>
+</html>
