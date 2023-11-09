@@ -18,22 +18,28 @@
     <body bgcolor="#F0FFF0">  
         <form action="laporan.html" target="_blank">
             <label for="Clinicname"><strong>Clinic Name</strong></label> 
-            <input type="text" id="Clinicname" name="Clinicname" required>
+            <input type="text" id="Clinicname" name="Clinicname" required
+             minlength="6" maxlength="15">
 
             <label for="Shortname"><strong>Short Name</strong></label>
-            <input type="text" id="Shortname" name="Shortname" required>
+            <input type="text" id="Shortname" name="Shortname" required
+             minlength="2" maxlength="7">
             
             <label for="Nomortelp"><strong>Phone number</strong></label>
-            <input type="number" id="Nomortelp" name="Nomortelp" required>
+            <input type="number" id="Nomortelp" name="Nomortelp" required
+             minlength="8" maxlength="12">
 
             <label for="Idtr"><strong>Id Transaction</strong></label>
-            <input type="text" id="Idtr" name="Idtr" required>
+            <input type="text" id="Idtr" name="Idtr" required
+             minlength="8" maxlength="12">
 
             <label for="Idpasien"><strong>Id Patient</strong></label>
-            <input type="text" id="Idpasien" name="Idpasien" required>
+            <input type="text" id="Idpasien" name="Idpasien" required
+             minlength="8" maxlength="12">
 
             <label for="Nmpasien"><strong>Patient Name</strong></label>
-            <input type="text" id="Nmpasien" name="Nmpasien" required>
+            <input type="text" id="Nmpasien" name="Nmpasien" required
+             minlength="8" maxlength="12">
 
             <input type="radio" id="option1" name="Option" value="Aestech" required>
             <label for="option1"><strong>Aestech</strong></label><br>
