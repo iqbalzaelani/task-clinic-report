@@ -96,6 +96,13 @@ input[type="text"] {
     border: 2px solid #ccc;
     border-radius: 3px;
 }
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+}
 
 input[type="submit"] {
     background-color: #4CAF50;
